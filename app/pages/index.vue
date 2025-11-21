@@ -1,5 +1,5 @@
 <template>
-  <div class="hello-container">
+  <div class="hello-container flex items-center justify-center h-screen">
     Hello World
   </div>
 </template>
@@ -9,12 +9,4 @@
 </script>
 
 <style scoped>
-.hello-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  font-size: 2rem;
-  color: #333;
-}
 </style>
