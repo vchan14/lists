@@ -14,5 +14,10 @@ useHead({
 </script>
 
 <template>
-  <NuxtPage />
+  <div>
+    <CollapsibleList />
+    <NuxtPage />
+  </div>
 </template>
+
+

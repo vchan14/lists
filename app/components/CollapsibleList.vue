@@ -22,7 +22,7 @@
             <li
               v-for="item in items"
               :key="item.id"
-              @click="selectItem(item.id)"
+              @click="selectItem(item)"
               class="list-item"
               :class="{ 'selected': selectedItemId === item.id }"
             >
@@ -45,25 +45,34 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
+import { menuItems } from '~/config/menuItems'
+
+const router = useRouter()
+const route = useRoute()
 
 const isExpanded = ref(false)
 const selectedItemId = ref(null)
 
-const items = ref([
-  { id: 1, label: 'Item 1' },
-  { id: 2, label: 'Item 2' },
-  { id: 3, label: 'Item 3' },
-  { id: 4, label: 'Item 4' },
-  { id: 5, label: 'Item 5' }
-])
+const items = ref(menuItems)
+
+// Set selected item based on current route
+watch(() => route.path, (newPath) => {
+  const matchedItem = items.value.find(item => item.route === newPath)
+  if (matchedItem) {
+    selectedItemId.value = matchedItem.id
+  }
+}, { immediate: true })
 
 const toggleList = () => {
   isExpanded.value = !isExpanded.value
 }
 
-const selectItem = (itemId) => {
-  selectedItemId.value = itemId
+const selectItem = (item) => {
+  selectedItemId.value = item.id
+  router.push(item.route)
+  // Close the menu after navigation
+  isExpanded.value = false
 }
 </script>
 
