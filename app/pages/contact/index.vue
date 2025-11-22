@@ -1,5 +1,5 @@
 <template>
-  <div class="page-container flex items-center justify-center h-screen">
+  <div class="page-container flex h-screen items-center justify-center">
     <h1 class="text-4xl">Contact Page</h1>
   </div>
 </template>

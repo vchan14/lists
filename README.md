@@ -1,4 +1,5 @@
-# Nuxt Template: 
+# Nuxt Template:
+
 A minimal template that allows use to quickly build different pages. Below are the technologies used in this template:
 
 - Nuxt UI
@@ -6,6 +7,7 @@ A minimal template that allows use to quickly build different pages. Below are t
 - Prettier
 
 ## To use this template
+
 1. Add a folder inside the `pages` directory.
 2. Create a `index.vue` file inside the folder.
 3. Add this page to the list via `config/menuItems.ts`.

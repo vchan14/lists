@@ -48,7 +48,7 @@
       variant="subtle"
       trailing-icon="i-lucide-chevron-down"
       size="xs"
-      class="-mb-[6px] font-semibold rounded-full truncate"
+      class="-mb-[6px] truncate rounded-full font-semibold"
       :class="[open && 'bg-primary/15']"
       :ui="{
         trailingIcon: [
