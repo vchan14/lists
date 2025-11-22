@@ -2,8 +2,6 @@
   <div>
     <svg
       v-for="(isYellow, index) in startArr"
-      @mouseenter="mouseEnterStar(index)"
-      @mouseleave="mouseLeaveStart()"
       :key="index"
       xmlns="http://www.w3.org/2000/svg"
       class="star-icon"
@@ -12,6 +10,8 @@
       viewBox="0 0 24 24"
       stroke="currentColor"
       stroke-width="2"
+      @mouseenter="mouseEnterStar(index)"
+      @mouseleave="mouseLeaveStart()"
     >
       <path
         stroke-linecap="round"

@@ -2,10 +2,10 @@
   <div class="collapsible-list">
     <!-- Hamburger Icon Button -->
     <button
-      @click="toggleList"
       class="hamburger-btn"
       :class="{ expanded: isExpanded }"
       aria-label="Toggle menu"
+      @click="toggleList"
     >
       <div class="hamburger-icon">
         <span></span>
@@ -22,9 +22,9 @@
             <li
               v-for="item in items"
               :key="item.id"
-              @click="selectItem(item)"
               class="list-item"
               :class="{ selected: selectedItemId === item.id }"
+              @click="selectItem(item)"
             >
               {{ item.label }}
             </li>
