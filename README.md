@@ -1,5 +1,5 @@
 # Nuxt Template: 
-A minimal template that allows use to quickly build different pages. Belows are the technologies used in this template:
+A minimal template that allows use to quickly build different pages. Below are the technologies used in this template:
 
 - Nuxt UI
 - Tailwind CSS

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="flex">
     <svg
       v-for="(isYellow, index) in startArr"
       :key="index"
@@ -12,6 +12,7 @@
       stroke-width="2"
       @mouseenter="mouseEnterStar(index)"
       @mouseleave="mouseLeaveStart()"
+      @click="mouseClick(index)"
     >
       <path
         stroke-linecap="round"
@@ -37,12 +38,13 @@ const props = defineProps({
 });
 
 const hoveredIndex = ref(null);
+const numSelectedStars = ref(props.filledStars);
 
 const startArr = computed(() => {
   const arr = [];
   if (hoveredIndex.value === null) {
     for (let i = 0; i < props.maxStars; i++) {
-      arr.push(i < props.filledStars);
+      arr.push(i <= numSelectedStars.value);
     }
   } else {
     for (let i = 0; i < props.maxStars; i++) {
@@ -51,6 +53,11 @@ const startArr = computed(() => {
   }
   return arr;
 });
+
+const mouseClick = (index) => {
+  console.log("click", index);
+  numSelectedStars.value = index;
+};
 
 const mouseEnterStar = (index) => {
   console.log("enter", index);
@@ -66,7 +73,6 @@ const mouseLeaveStart = () => {
 <style>
 .star-icon {
   --icon-size: 32px;
-
   cursor: pointer;
   height: var(--icon-size);
   width: var(--icon-size);
