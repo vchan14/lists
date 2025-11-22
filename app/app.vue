@@ -16,8 +16,8 @@ useHead({
 <template>
   <div>
     <CollapsibleList />
-    <NuxtPage />
+    <NuxtLayout>
+      <NuxtPage />
+    </NuxtLayout>
   </div>
 </template>
-
-
