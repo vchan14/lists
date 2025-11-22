@@ -8,5 +8,4 @@
 // Component will be auto-imported by Nuxt
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>

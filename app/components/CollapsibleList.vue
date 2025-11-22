@@ -4,7 +4,7 @@
     <button
       @click="toggleList"
       class="hamburger-btn"
-      :class="{ 'expanded': isExpanded }"
+      :class="{ expanded: isExpanded }"
       aria-label="Toggle menu"
     >
       <div class="hamburger-icon">
@@ -24,7 +24,7 @@
               :key="item.id"
               @click="selectItem(item)"
               class="list-item"
-              :class="{ 'selected': selectedItemId === item.id }"
+              :class="{ selected: selectedItemId === item.id }"
             >
               {{ item.label }}
             </li>
@@ -35,45 +35,45 @@
 
     <!-- Overlay to close menu when clicking outside -->
     <transition name="fade">
-      <div
-        v-if="isExpanded"
-        class="overlay"
-        @click="toggleList"
-      ></div>
+      <div v-if="isExpanded" class="overlay" @click="toggleList"></div>
     </transition>
   </div>
 </template>
 
 <script setup>
-import { ref, watch } from 'vue'
-import { menuItems } from '~/config/menuItems'
+import { ref, watch } from "vue";
+import { menuItems } from "~/config/menuItems";
 
-const router = useRouter()
-const route = useRoute()
+const router = useRouter();
+const route = useRoute();
 
-const isExpanded = ref(false)
-const selectedItemId = ref(null)
+const isExpanded = ref(false);
+const selectedItemId = ref(null);
 
-const items = ref(menuItems)
+const items = ref(menuItems);
 
 // Set selected item based on current route
-watch(() => route.path, (newPath) => {
-  const matchedItem = items.value.find(item => item.route === newPath)
-  if (matchedItem) {
-    selectedItemId.value = matchedItem.id
-  }
-}, { immediate: true })
+watch(
+  () => route.path,
+  (newPath) => {
+    const matchedItem = items.value.find((item) => item.route === newPath);
+    if (matchedItem) {
+      selectedItemId.value = matchedItem.id;
+    }
+  },
+  { immediate: true },
+);
 
 const toggleList = () => {
-  isExpanded.value = !isExpanded.value
-}
+  isExpanded.value = !isExpanded.value;
+};
 
 const selectItem = (item) => {
-  selectedItemId.value = item.id
-  router.push(item.route)
+  selectedItemId.value = item.id;
+  router.push(item.route);
   // Close the menu after navigation
-  isExpanded.value = false
-}
+  isExpanded.value = false;
+};
 </script>
 
 <style scoped>
@@ -204,4 +204,3 @@ const selectItem = (item) => {
   opacity: 0;
 }
 </style>
-
