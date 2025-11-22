@@ -1,27 +1,17 @@
-# Nuxt Starter Template
+# Nuxt Template: 
+A minimal template that allows use to quickly build different pages. Belows are the technologies used in this template:
 
-[![Nuxt UI](https://img.shields.io/badge/Made%20with-Nuxt%20UI-00DC82?logo=nuxt&labelColor=020420)](https://ui.nuxt.com)
+- Nuxt UI
+- Tailwind CSS
+- Prettier
 
-Use this template to get started with [Nuxt UI](https://ui.nuxt.com) quickly.
-
-- [Live demo](https://starter-template.nuxt.dev/)
-- [Documentation](https://ui.nuxt.com/docs/getting-started/installation/nuxt)
-
-<a href="https://starter-template.nuxt.dev/" target="_blank">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://ui.nuxt.com/assets/templates/nuxt/starter-dark.png">
-    <source media="(prefers-color-scheme: light)" srcset="https://ui.nuxt.com/assets/templates/nuxt/starter-light.png">
-    <img alt="Nuxt Starter Template" src="https://ui.nuxt.com/assets/templates/nuxt/starter-light.png">
-  </picture>
-</a>
-
-> The starter template for Vue is on https://github.com/nuxt-ui-templates/starter-vue.
+## To use this template
+1. Add a folder inside the `pages` directory.
+2. Create a `index.vue` file inside the folder.
+3. Add this page to the list via `config/menuItems.ts`.
+4. Start building your page!
 
 ## Quick Start
-
-```bash [Terminal]
-npm create nuxt@latest -- -t github:nuxt-ui-templates/starter
-```
 
 ## Deploy your own
 
@@ -56,5 +46,3 @@ Locally preview production build:
 ```bash
 pnpm preview
 ```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
